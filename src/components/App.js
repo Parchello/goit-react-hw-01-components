@@ -1,0 +1,29 @@
+import { Component } from 'react';
+import { Profile } from './profile/profile';
+import initialProfileData from '../components/user.json';
+import initialStatisticData from '../components/data.json';
+import initialFriendsData from '../components/friends.json';
+import initialTransactionsData from '../components/transactions.json';
+import { Statistics } from './Statistics/Statistics';
+import { Friends } from './Friends/friends';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
+export class App extends Component {
+  state = {
+    profileData: initialProfileData,
+    statisticData: initialStatisticData,
+    friendsData: initialFriendsData,
+    transactionsData: initialTransactionsData,
+  };
+
+  render() {
+    return (
+      <div>
+        <Profile items={this.state.profileData} />
+        <Statistics stats={this.state.statisticData} />
+        <Friends friends={this.state.friendsData} />
+        <TransactionHistory transactions={this.state.transactionsData} />
+      </div>
+    );
+  }
+}
