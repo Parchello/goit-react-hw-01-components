@@ -1,27 +1,36 @@
+import {
+  Avatar,
+  Label,
+  List,
+  ListItem,
+  ProfileCard,
+  Quantity,
+} from './profile.styles';
+
 export const Profile = ({ items }) => {
   return (
-    <div>
+    <ProfileCard>
       <div>
-        <img src={items.avatar} alt="User avatar" class="avatar" />
-        <p class="name">{items.username}</p>
-        <p class="tag">@{items.tag}</p>
-        <p class="location">{items.location}</p>
+        <Avatar src={items.avatar} alt={items.username} />
+        <p>{items.username}</p>
+        <p>@{items.tag}</p>
+        <p>{items.location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{items.stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{items.stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{items.stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <List>
+        <ListItem>
+          <Label>Followers</Label>
+          <Quantity>{items.stats.followers}</Quantity>
+        </ListItem>
+        <ListItem>
+          <Label>Views</Label>
+          <Quantity>{items.stats.views}</Quantity>
+        </ListItem>
+        <ListItem>
+          <Label>Likes</Label>
+          <Quantity c>{items.stats.likes}</Quantity>
+        </ListItem>
+      </List>
+    </ProfileCard>
   );
 };

@@ -1,6 +1,8 @@
+import { MainTable } from './TransactionHistory.styles';
+
 export const TransactionHistory = ({ transactions }) => {
   return (
-    <table class="transaction-history">
+    <MainTable>
       <thead>
         <tr>
           <th>Type</th>
@@ -18,6 +20,6 @@ export const TransactionHistory = ({ transactions }) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </MainTable>
   );
 };

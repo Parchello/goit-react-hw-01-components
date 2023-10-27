@@ -1,18 +1,15 @@
+import { CircleStatus, List, ListItem } from './friends.styles';
+
 export const Friends = ({ friends }) => {
   return (
-    <ul class="stat-list">
+    <List>
       {friends.map(friend => (
-        <li class="item" key={friend.id}>
-          <span class="status">{friend.isOnline}</span>
-          <img
-            class="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p class="name">{friend.name}</p>
-        </li>
+        <ListItem>
+          <CircleStatus isOnline={friend.isOnline}></CircleStatus>
+          <img src={friend.avatar} alt="User avatar" width="48" />
+          <p>{friend.name}</p>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
