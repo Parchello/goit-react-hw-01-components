@@ -6,7 +6,7 @@ import initialFriendsData from '../components/friends.json';
 import initialTransactionsData from '../components/transactions.json';
 import { Profile } from './profile/profile';
 import { Statistics } from './Statistics/Statistics';
-import { Friends } from './Friends/friends';
+import { FriendList } from './Friends/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 export class App extends Component {
@@ -22,7 +22,7 @@ export class App extends Component {
       <div>
         <Profile items={this.state.profileData} />
         <Statistics stats={this.state.statisticData} />
-        <Friends friends={this.state.friendsData} />
+        <FriendList friends={this.state.friendsData} />
         <TransactionHistory transactions={this.state.transactionsData} />
       </div>
     );
